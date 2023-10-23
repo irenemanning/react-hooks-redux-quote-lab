@@ -35,7 +35,11 @@ const initialState = [];
 export default function quotesReducer(state = initialState, action) {
   switch (action.type) {
     case "quotes/add":
-      return [...state, action.payload]
+      const newQuote = {
+        ...action.payload,
+        votes: 0, // Set the initial votes to zero
+      };
+      return [...state, newQuote];
     
     case "quotes/remove":
       return state.filter((quote)=> quote.id !== action.payload)
