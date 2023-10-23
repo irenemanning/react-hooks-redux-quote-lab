@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { upvoteQuote, downvoteQuote, removeQuote } from "./quotesSlice";
 
 
-function QuoteCard(quote) {
+function QuoteCard({quote}) {
   const dispatch = useDispatch();
 
   const handleUpvote = () => {
